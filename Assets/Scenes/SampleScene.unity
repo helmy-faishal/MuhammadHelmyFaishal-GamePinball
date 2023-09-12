@@ -829,7 +829,7 @@ HingeJoint:
   m_Anchor: {x: 0.4, y: 0.5, z: 0}
   m_Axis: {x: 0, y: 1, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0, y: 0, z: 0}
+  m_ConnectedAnchor: {x: 1.98, y: 1, z: -7.92}
   serializedVersion: 2
   m_UseSpring: 1
   m_Spring:
@@ -1341,7 +1341,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2717459646193422426, guid: f67b7b040855cdd4da265a19f6548597, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -1.6689999
+      value: 7.93
       objectReference: {fileID: 0}
     - target: {fileID: 2717459646193422426, guid: f67b7b040855cdd4da265a19f6548597, type: 3}
       propertyPath: m_LocalRotation.w
