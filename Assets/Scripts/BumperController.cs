@@ -19,7 +19,7 @@ public class BumperController : MonoBehaviour
     {
         if (collision.collider.CompareTag("Ball"))
         {
-            Rigidbody ball = collision.collider.gameObject.GetComponent<Rigidbody>();
+            Rigidbody ball = collision.gameObject.GetComponent<Rigidbody>();
             ball.velocity *= multiplier;
             animator.SetTrigger("hit");
         }
