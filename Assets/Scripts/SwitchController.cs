@@ -43,6 +43,13 @@ public class SwitchController : MonoBehaviour
         {
             isSwitchActive = !isSwitchActive;
             ChangeSwitchColor(isSwitchActive);
+
+            // (?.) Cek null untuk Test Scene
+            AudioManager.instance?.PlaySwitchSFX(transform.position);
+
+            // Ketika Switch berubah aktif, warna VFX menggunakan warna onMaterial
+            Color colorVFX = isSwitchActive? onMaterial.color : offMaterial.color;
+            FXManager.instance?.PlayVFX(transform.position,colorVFX,false);
         }
     }
 

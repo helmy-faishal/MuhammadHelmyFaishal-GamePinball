@@ -22,6 +22,10 @@ public class BumperController : MonoBehaviour
             Rigidbody ball = collision.gameObject.GetComponent<Rigidbody>();
             ball.velocity *= multiplier;
             animator.SetTrigger("hit");
+
+            // (?.) Cek null untuk Test Scene
+            AudioManager.instance?.PlayBumperSFX(transform.position);
+            FXManager.instance?.PlayVFX(transform.position, color);
         }
     }
 }
