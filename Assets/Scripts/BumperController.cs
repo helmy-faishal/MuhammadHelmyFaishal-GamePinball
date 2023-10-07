@@ -9,6 +9,8 @@ public class BumperController : MonoBehaviour
     private Renderer render;
     private Animator animator;
 
+    public int bumperScore = 10;
+
     private void Awake()
     {
         render = GetComponent<Renderer>();
@@ -26,6 +28,8 @@ public class BumperController : MonoBehaviour
             // (?.) Cek null untuk Test Scene
             AudioManager.instance?.PlayBumperSFX(transform.position);
             FXManager.instance?.PlayVFX(transform.position, color);
+
+            GameManager.instance?.AddScore(bumperScore);
         }
     }
 }

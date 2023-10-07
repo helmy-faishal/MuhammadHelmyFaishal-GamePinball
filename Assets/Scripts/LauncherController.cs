@@ -13,6 +13,8 @@ public class LauncherController : MonoBehaviour
     {
         isHold = false;
         power = 0;
+
+        GameManager.instance?.SetLauncherIndicator(0f);
     }
 
     private void OnCollisionStay(Collision collision)
@@ -23,11 +25,14 @@ public class LauncherController : MonoBehaviour
             {
                 isHold = true;
                 power = Mathf.Clamp(power + Time.deltaTime, 0, maxSecond);
-            } else
+
+                GameManager.instance?.SetLauncherIndicator(power/maxSecond);
+            } 
+            else
             {
                 if (isHold)
                 {
-                    float totalForce = power * force;
+                    float totalForce = (power/maxSecond) * force;
 
                     Rigidbody ball = collision.gameObject.GetComponent<Rigidbody>();
                     ball.AddForce(Vector3.forward * totalForce, ForceMode.Impulse);

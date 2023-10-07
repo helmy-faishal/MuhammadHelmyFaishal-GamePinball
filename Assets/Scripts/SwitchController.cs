@@ -12,6 +12,8 @@ public class SwitchController : MonoBehaviour
 
     public bool isSwitchActive = false;
 
+    public int switchScore = 10;
+
     private void Awake()
     {
         render = GetComponent<Renderer>();
@@ -50,6 +52,8 @@ public class SwitchController : MonoBehaviour
             // Ketika Switch berubah aktif, warna VFX menggunakan warna onMaterial
             Color colorVFX = isSwitchActive? onMaterial.color : offMaterial.color;
             FXManager.instance?.PlayVFX(transform.position,colorVFX,false);
+
+            GameManager.instance?.AddScore(switchScore);
         }
     }
 
